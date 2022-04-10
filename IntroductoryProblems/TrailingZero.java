@@ -1,7 +1,9 @@
+package IntroductoryProblems;
+
 import java.util.*;
 import java.io.*;
 
-public class ClassName {
+public class TrailingZero {
     
     static class FastReader {
         BufferedReader br;
@@ -60,8 +62,16 @@ public class ClassName {
         //         BufferedWriter(new FileWriter("output.txt")));
         FastReader fr = new FastReader();
         PrintWriter pw = new PrintWriter(System.out);
-       // write logic here
-       pw.close();
+
+        long n = fr.nextLong();
+        long ans = 0;
+
+        for(int i = 5; i <= n; i *= 5){
+            ans += (n / i);
+        }
+
+        pw.println(ans);
+        pw.close();
     }
 
 }

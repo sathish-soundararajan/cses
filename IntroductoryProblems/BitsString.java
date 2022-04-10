@@ -1,7 +1,9 @@
+package IntroductoryProblems;
+
 import java.util.*;
 import java.io.*;
 
-public class ClassName {
+public class BitsString {
     
     static class FastReader {
         BufferedReader br;
@@ -52,6 +54,21 @@ public class ClassName {
         }
     }
 
+    private static long MOD = 1000000007;
+
+    private static long powMod(int v, int x){
+        if(x == 0){
+            return 1;
+        }
+
+        if((x & 1) == 1){
+            return (v * powMod(v, x - 1)) % MOD;
+        }
+
+        int half = x / 2;
+        long val = powMod(v, half);
+        return (val * val) % MOD;
+    }
 
     public static void main(String[] args) throws IOException{
         // BufferedReader br = new BufferedReader(
@@ -60,8 +77,11 @@ public class ClassName {
         //         BufferedWriter(new FileWriter("output.txt")));
         FastReader fr = new FastReader();
         PrintWriter pw = new PrintWriter(System.out);
-       // write logic here
-       pw.close();
+       
+        int n = fr.nextInt();
+
+        pw.println(powMod(2, n));
+        pw.close();
     }
 
 }
