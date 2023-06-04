@@ -177,7 +177,7 @@ public class DynamicRangeMinimumQueries {
     }
 
     public static void main(String[] args){
-
+        // Not working need to debug
         FastReader fr = new FastReader();
         PrintWriter pw = new PrintWriter(System.out);
 
