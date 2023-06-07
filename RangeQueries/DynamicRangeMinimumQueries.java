@@ -137,7 +137,7 @@ public class DynamicRangeMinimumQueries {
 
             int ans = Integer.MAX_VALUE;
             for(;left < right; left >>= 1, right >>= 1){
-                if((left & 1) > 0) ans = Math.min(ans, tree[left--]);
+                if((left & 1) > 0) ans = Math.min(ans, tree[left++]);
                 if((right & 1) > 0) ans = Math.min(ans, tree[--right]);
             }
             return ans;
@@ -177,7 +177,6 @@ public class DynamicRangeMinimumQueries {
     }
 
     public static void main(String[] args){
-        // Not working need to debug
         FastReader fr = new FastReader();
         PrintWriter pw = new PrintWriter(System.out);
 
@@ -200,7 +199,7 @@ public class DynamicRangeMinimumQueries {
             if(operationType == 2){
                 pw.println(st.query(l-1, r));
             }else{
-                st.set(l-1, l+1, r);
+                st.set(l-1, l, r);
             }
             
         }
